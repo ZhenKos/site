@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css') }}">
+    <title>Осмос 1</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <p>
+            <input type="number" name="Ci" id="Ci" class="form-control" placeholder="Введите Ci" step="0.01"><br>
+            <input type="number" name="Gv" id="Gv" class="form-control" placeholder="Введите Gv" step="0.01"><br>
+            <input type="number" name="Xz" id="Xz" class="form-control" placeholder="Введите Xz" step="0.01"><br>
+            <input type="number" name="Xp" id="Xp" class="form-control" placeholder="Введите Xp" step="0.01"><br>
+            <input type="number" name="Xr" id="Xr" class="form-control" placeholder="Введите Xr" step="0.01"><br>
+        </p>
+        <p>
+            <button type="submit" name="delta">Рассчёт ОС 1</button>
+        </p>
+    </form>
+    <center>
+    <table border="3">
+        <caption>Результаты вычисления одноступенчатой<br>обратноосмотической установки</caption>
+        <thead>
+            <tr>
+                <th>Мембрана</th>
+                <th>Разделитель</th>
+                <th>Смеситель</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Значение Gp: {{ Gp }}</td>
+                <td>Значение Gr: {{ Gr }}</td>
+                <td>Значение Gi: {{ Gi }}</td>
+            </tr>
+            <tr>
+                <td>Значение Cp: {{ Cp }}</td>
+                <td>Значение Gs: {{ Gs }}</td>
+                <td>Значение Cv: {{ Cv }}</td>
+            </tr>
+            <tr>
+                <td>Значение Gk: {{ Gk }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Значение Ck: {{ Ck }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    </center>
+    <ul><h3>Проверка правильности расчётов</h3>
+        <li>Значение LP: {{ LP }}</li>
+        <li>Значение RP: {{ RP }}</li>
+        <li>Значение delta: {{ delta }}</li>
+    </ul>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <nav class="my-2 mr-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/">Главная</a>
+            <a class="p-2 text-dark" href="/OS2">Осмос 2</a>
+        </nav>
+    </div>
+</body>
+</html>
